@@ -29,6 +29,12 @@ import javax.swing.SwingUtilities;
  */
 public class TypingGame15 extends JFrame{
 
+    public static final String[] WORD_POOL = {"when", "there", "look", "where", "feel", "consider", "try", "action", "here", "type", 
+                                               "game", "and", "how", "word", "test", "love", "speed", "together", "tomorrow", "then",
+                                               "after", "final", "study", "have", "from", "because", "photo", "bottle", "cap", "people",
+                                               "thing", "laptop", "year", "know", "team", "answer", "question", "button", "attention", "use",
+                                               "amount", "current", "first", "borrow", "zeal", "fashion", "short", "long", "good", "work"};
+    
     private final JPanel panel;
     private JLabel[] labels;
     private final JLabel timerLabel; // New label to display the timer
@@ -319,40 +325,14 @@ public class TypingGame15 extends JFrame{
 
     //passage that will display in our test
     public static String getPassage(){
-        ArrayList<String> Passages=new ArrayList<>();
-        String pas1="If you're not doing something with your life, then it doesn’t matter how long you live. If you're doing something with your life, then it doesn't matter how short your life may be. A life is not measured by years lived, but by its usefulness. If you are giving, loving, serving, helping, encouraging, and adding value to others, then you're living a life that counts!";
-        String pas2="An application programming interface(API) is a way for two or more computer programs to communicate with each other. It is a type of software interface, offering a service to other pieces of software. A document or standard that describes how to build or use such a connection or interface is called an API specification.";
-        String pas3="Virtual reality is the computer-generated simulation of a three-dimensional image or environment that can be interacted with in a seemingly real or physical way by a person using special electronic equipment, such as a helmet with a screen inside or gloves fitted with sensors.";
-        String pas4="A technological revolution is a period in which one or more technologies is replaced by another novel technology in a short amount of time. It is a time of accelerated technological progress characterized by innovations whose rapid application and diffusion typically cause an abrupt change in society.";
-        String pas5="Augmented reality (AR) is the real-time use of information in the form of text, graphics, audio and other virtual enhancements integrated with real-world objects. It is this real world element that differentiates AR from virtual reality.";
-        String pas6="Multimedia content helps to vary and enhance the learning process, and leads to better knowledge retention. Educational video can provide more opportunities for students to engage with the content. Students around the world can learn from course content made available through video.";
-        String pas7="Some periods of our growth are so confusing that we don't even recognize that growth is happening...Those long periods when something inside ourselves seems to be waiting, holding its breath, unsure about what the next step should be, eventually become the periods we wait for, for it is in those periods that we realize that we are being prepared for the next phase of our life and that, in all probability, a new level of the personality is about to be revealed.";
-        String pas8="Human life without technology is like birds without feathers. We cannot imagine to survive without technology in today’s fast-moving world. The Corona virus pandemic has moreover proven, the importance of technology in our daily lives. ";
-        String pas9="Globalization wouldn’t have been possible without internet. The fact that we can connect and work from any part of the world is because we have internet. We can have client meets and requirements from all over the globe and we can assimilate information and process delivery because we have internet.";
-        String pas10="The foremost purpose of technology is communication. Social media and other technological applications have brought families together. Today we can find long lost school mates over Facebook, twitter, Instagram and we can reinstate our communication. In fact, we can even communicate with world leaders, prominent figures over these platforms. Communication is required in professional fields as well, and technology ensures that we can communicate with the world from wherever we are.";
-        
-        Passages.add(pas1);
-        Passages.add(pas2);
-        Passages.add(pas3);
-        Passages.add(pas4);
-        Passages.add(pas5);
-        Passages.add(pas6);
-        Passages.add(pas7);
-        Passages.add(pas8);
-        Passages.add(pas9);
-        Passages.add(pas10);
-        
-        Random r=new Random();
-        //Getting a random position from 0-9
-        int place=(r.nextInt(10)); 
-        
-        //to use 200 characters in our typing test so I am taking a substring of that passage from 0 to 200
-        String toReturn=Passages.get(place).substring(0,200); 
-        if (toReturn.charAt(199)==32){
-            toReturn=toReturn.strip(); //removing the blank spaces before the after substring we have taken
-            toReturn=toReturn+"."; //Adding a full stop at the last instead of a space
+        // Generating random text
+        Random r = new Random();
+        StringBuilder textToType = new StringBuilder();
+        for (int i = 0; i < 75; i++) {
+            int index = r.nextInt(WORD_POOL.length);
+            textToType.append(WORD_POOL[index]).append(" ");
         }
-        return(toReturn); //We have got our Passage
+        return textToType.toString().trim();
         
     }
     
