@@ -63,25 +63,25 @@ public class MyFrame extends JFrame{
             switch (seconds) {
                 case 15 -> {
                     TypingGame15 TypingGame15 = new TypingGame15();
-                    TypingGame15.setSize(500,500);
+                    TypingGame15.setSize(900,600);
                     TypingGame15.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     TypingGame15.setVisible(true);
                 }
                 case 30 -> {
                     TypingGame TypingGame = new TypingGame();
-                    TypingGame.setSize(500,500);
+                    TypingGame.setSize(900,600);
                     TypingGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     TypingGame.setVisible(true);
                 }
                 case 45 -> {
                     TypingGame45 TypingGame45 = new TypingGame45();
-                    TypingGame45.setSize(500,500);
+                    TypingGame45.setSize(900,600);
                     TypingGame45.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     TypingGame45.setVisible(true);
                 }
                 case 60 -> {
                     TypingGame60 TypingGame60 = new TypingGame60();
-                    TypingGame60.setSize(500,500);
+                    TypingGame60.setSize(900,600);
                     TypingGame60.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     TypingGame60.setVisible(true);
                 }
